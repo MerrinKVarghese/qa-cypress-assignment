@@ -1,4 +1,11 @@
+import { aboutUs } from "../support/appActions/aboutUs";
+
 describe("Demoblaze - Positive edge cases", () => {
+
+   it("Positive: About Us modal opens, video exists, and closes", () => {
+    cy.openHome();
+    aboutUs.openAndValidate();
+  });
 
   it("Positive: Contact form can be opened and submitted (alert appears)", () => {
     cy.openHome();
@@ -12,17 +19,16 @@ describe("Demoblaze - Positive edge cases", () => {
     cy.get("#recipient-name").clear().type("Merrin");
     cy.get("#message-text").clear().type("Hello! This is for testing Contact message.");
 
-    // Validate alert on submit (Cypress auto clicks OK)
+    // Validate alert on submit 
     cy.once("window:alert", (text) => {
-      // Demoblaze usually shows "Thanks for the message!!"
       expect(text.toLowerCase()).to.include("thanks");
     });
 
-    // Send message
     cy.get("#exampleModal").contains("button", "Send message").click({ force: true });
 
-    // Modal should close after sending (sometimes it closes automatically)
     cy.get("#exampleModal").should("not.be.visible");
   });
+
+ 
 
 });

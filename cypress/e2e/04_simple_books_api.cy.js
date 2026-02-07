@@ -69,14 +69,12 @@ describe("Simple Books API - Positive & Negative Tests", () => {
     });
 
     it("POST /orders without token returns 401", () => {
-      // Call createOrder without a token by passing empty token and failOnStatusCode:false
       createOrder("", 1, "No Token User", false).then((res) => {
         expect(res.status).to.eq(401);
       });
     });
 
     it("POST /orders with missing required field returns 400", () => {
-      // We’ll send an invalid body by calling cy.request directly for clarity
       cy.request({
         method: "POST",
         url: "https://simple-books-api.click/orders",
@@ -86,7 +84,7 @@ describe("Simple Books API - Positive & Negative Tests", () => {
           "Content-Type": "application/json",
         },
         body: {
-          customerName: "Missing BookId User", // bookId missing intentionally
+          customerName: "Missing BookId User", 
         },
       }).then((res) => {
         expect(res.status).to.eq(400);

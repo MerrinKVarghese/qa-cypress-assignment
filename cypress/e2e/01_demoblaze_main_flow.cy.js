@@ -8,7 +8,7 @@ describe("Demoblaze - Main Flow (Stable E2E)", () => {
 
   const waitForHomeProducts = () => {
     cy.intercept("GET", "**/entries**").as("entries");
-    cy.openHome(); // from commands.js
+    cy.openHome(); 
     cy.wait("@entries");
     cy.get(".card-title, .hrefch", { timeout: 15000 }).should("have.length.greaterThan", 0);
   };
@@ -18,14 +18,13 @@ describe("Demoblaze - Main Flow (Stable E2E)", () => {
 
     waitForHomeProducts();
 
-    // use stable ID instead of text to avoid clicking wrong element
     cy.get("#signin2", { timeout: 15000 }).click({ force: true });
     cy.get("#signInModal", { timeout: 15000 }).should("be.visible");
 
     cy.get("#sign-username").clear().type(user.username);
     cy.get("#sign-password").clear().type(user.password);
 
-    cy.acceptAlertContains("sign"); // from commands.js (accepts + asserts)
+    cy.acceptAlertContains("sign"); 
 
     cy.get("#signInModal").contains("button", "Sign up").click({ force: true });
     cy.wait("@signup");
@@ -61,7 +60,6 @@ describe("Demoblaze - Main Flow (Stable E2E)", () => {
 
     cy.wait("@addtocart");
 
-    // back home and wait for entries again to avoid stale state
     cy.intercept("GET", "**/entries**").as("entriesAgain");
     cy.contains("a", "Home").click({ force: true });
     cy.wait("@entriesAgain");
@@ -122,7 +120,7 @@ describe("Demoblaze - Main Flow (Stable E2E)", () => {
 
     cy.get("#name").clear().type("Test User");
     cy.get("#country").clear().type("Germany");
-    cy.get("#city").clear().type("Berlin");
+    cy.get("#city").clear().type("Hamburg");
     cy.get("#card").clear().type("4111111111111111");
     cy.get("#month").clear().type("12");
     cy.get("#year").clear().type("2030");
