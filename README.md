@@ -19,12 +19,40 @@ Covered scenarios:
 - Additional tests:
   - Negative: login rejected (wrong password + empty password)
   - Positive: Contact form submit shows success alert
+ 
+## API Tests – Simple Books API
 
-### API Tests (Simple Books API)
-Reference: https://github.com/vdespa/introduction-to-postman-course/blob/main/simple-books-api.md  
 Base URL: https://simple-books-api.click
 
-(Coming in this repository: 2–3 positive + 2–3 negative API tests using `cy.request()`)
+Covered scenarios:
+- GET /status
+- GET /books
+- Create API client and token
+- Create order (authorized)
+- Verify order via GET /orders
+
+Negative scenarios:
+- Invalid book ID (404)
+- Create order without token (401)
+- Create order with missing required fields (400)
+
+
+## API Tests – Simple Books API
+
+Base URL: https://simple-books-api.click
+
+Covered scenarios:
+- GET /status
+- GET /books
+- Create API client and token
+- Create order (authorized)
+- Verify order via GET /orders
+
+Negative scenarios:
+- Invalid book ID (404)
+- Create order without token (401)
+- Create order with missing required fields (400)
+
 
 ## Project Structure
 
