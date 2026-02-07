@@ -17,26 +17,11 @@ Covered scenarios:
   - Validate total again
   - Place an order (Purchase)
 - Additional tests:
-  - Negative: login rejected (wrong password + empty password)
-  - Positive: Contact form submit shows success alert
+  - Negative: case 1:login rejected (wrong password)
+              case2:login rejected (empty password)
+  - Positive: case1: About us validation
+              case2 :Contact form submit shows success alert
  
-## API Tests – Simple Books API
-
-Base URL: https://simple-books-api.click
-
-Covered scenarios:
-- GET /status
-- GET /books
-- Create API client and token
-- Create order (authorized)
-- Verify order via GET /orders
-
-Negative scenarios:
-- Invalid book ID (404)
-- Create order without token (401)
-- Create order with missing required fields (400)
-
-
 ## API Tests – Simple Books API
 
 Base URL: https://simple-books-api.click
