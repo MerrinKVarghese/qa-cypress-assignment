@@ -59,8 +59,8 @@ Negative scenarios:
 - `cypress/e2e/` → Cypress specs (UI/API tests)
 - `cypress/support/` → reusable commands + appActions
 
-## How to Run Locally
-
 Install dependencies:
 ```bash
 npm install
+
+
