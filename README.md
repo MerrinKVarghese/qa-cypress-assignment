@@ -1,6 +1,11 @@
 # QA Automation Assignment (Cypress)
 
-This repository contains UI and API automation tests implemented using **Cypress**.
+This repository contains **UI and API automated tests** implemented using **Cypress**, as part of the QA automation coding exercise.
+
+The project covers:
+- UI automation for the Demoblaze e-commerce website
+- API automation for the Simple Books API
+- CI integration using GitHub Actions
 
 ## Scope
 
@@ -39,6 +44,7 @@ Negative scenarios:
 - Create order with missing required fields (400)
 
 
+
 ## Project Structure
 
 - `cypress/e2e/` → Cypress specs (UI/API tests)
@@ -47,5 +53,26 @@ Negative scenarios:
 Install dependencies:
 ```bash
 npm install
+```
+
+
+## Run Cypress Tests
+Open Cypress Test Runner
+```bash
+npx cypress open
+```
+Run Cypress Tests
+```bash
+npx cypress run
+```
+
+
+
+
+
+
+
+
+
 
 
